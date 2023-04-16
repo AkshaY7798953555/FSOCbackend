@@ -1,6 +1,7 @@
 const mysql = require('../handler')
 const getuser = async function (event) {
-    let data = await JSON.parse(event.body)
+    let data = event.multiValueQueryStringParameters;
+    console.log("data ",data)
     const result = await mysql.query("select count(*) as count from user where user_id = " + data.user_id)
     console.log("result : ", result[0].count)
     if (result[0].count == 1) {
