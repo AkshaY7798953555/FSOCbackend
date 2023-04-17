@@ -111,7 +111,7 @@ functions:
     events:
       - http:
           path: get-user
-          method: post
+          method: get
   centercreate:
     handler: controller/createCenter.createcenter
     events:

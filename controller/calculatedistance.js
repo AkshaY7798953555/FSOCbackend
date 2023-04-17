@@ -43,7 +43,8 @@ const CalculateDistance = async function (event) {
         finalResult.sort((x,y) => {
             return x.DistanceFromCurrentLocation - y.DistanceFromCurrentLocation;
         });
-
+        
+ 
         return {
             statusCode: 200,
             body: JSON.stringify({
