@@ -1,5 +1,5 @@
 const mysql = require('../handler')
-const getcenter = async function (event) {
+exports.handler = async function (event) {
     let data = event.multiValueQueryStringParameters;
     console.log("data ",data)
     const result = await mysql.query("select count(*) as count from user where user_id = " + data.user_id)
@@ -25,5 +25,5 @@ const getcenter = async function (event) {
 
 }
 
-module.exports.getcenter = getcenter
+
 

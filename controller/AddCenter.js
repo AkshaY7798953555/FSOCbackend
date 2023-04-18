@@ -1,6 +1,6 @@
 const mysql = require('../handler')
 
-const AddCenter = async function (event) {
+exports.handler = async function (event) {
     let data = await JSON.parse(event.body)
     const result = await mysql.query("select count(*) as count from user_address where user_id = " + data.user_id)
     console.log("result : ", result[0].count)
@@ -24,4 +24,3 @@ const AddCenter = async function (event) {
 }
 
 
-module.exports.AddCenter = AddCenter

@@ -1,6 +1,6 @@
 const mysql = require('../handler')
 const center = require('../controller/getcenter')
-const CalculateDistance = async function (event) {
+exports.handler = async function (event) {
     let data = await JSON.parse(event.body)
     
     const result = await mysql.query("select count(*) as count from user where user_id = " + data.user_id)
@@ -64,7 +64,6 @@ const CalculateDistance = async function (event) {
 }
 
 
-module.exports.CalculateDistance = CalculateDistance
 
 
 // exports.calculateDistance = (event, context, callback) => {

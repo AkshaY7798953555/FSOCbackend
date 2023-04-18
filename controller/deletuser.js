@@ -1,5 +1,5 @@
 const mysql = require('../handler')
-const deleteuser = async function (event) {
+exports.handler = async function (event) {
     let data = await JSON.parse(event.body)
     const result = await mysql.query("select count(*) as count from user where user_id = " + data.user_id)
     console.log("result : ", result[0].count)
@@ -23,5 +23,5 @@ const deleteuser = async function (event) {
 
 }
 
-module.exports.deleteuser = deleteuser
+
 
